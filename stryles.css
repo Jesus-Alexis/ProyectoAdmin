@@ -1,0 +1,463 @@
+/* --- Reinicio básico --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* Evita el scroll horizontal si el menú se sale */
+}
+
+/* --- Estilos del Header (se mantienen igual) --- */
+header {
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.carrera,
+.materia,
+.grup,
+.tituloProy,
+.equip {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.head-container {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 8px;
+  padding: 10px;
+}
+
+.contain1 {
+  grid-column: span 2 / span 2;
+}
+.contain2 {
+  grid-column: span 6 / span 6;
+  grid-column-start: 4;
+}
+.contain3 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 6;
+  grid-row-start: 2;
+}
+.contain4 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 6;
+  grid-row-start: 3;
+}
+.contain5 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 6;
+  grid-row-start: 4;
+}
+.contain6 {
+  grid-column: span 4 / span 4;
+  grid-column-start: 5;
+  grid-row-start: 5;
+}
+.contain7 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 6;
+  grid-row-start: 6;
+}
+.contain8 {
+  grid-column: span 4 / span 4;
+  grid-column-start: 5;
+  grid-row-start: 7;
+}
+
+.nombres {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  list-style: none;
+}
+
+.nombres > li {
+  padding: 5px;
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Logo_tse {
+  margin: 1rem 0px 0px 10rem;
+  width: 75px;
+  display: inline-block;
+}
+
+/* --- BOTON PARA MENU (STICKY ahora correctamente posicionado) --- */
+.container-stiky {
+  position: sticky;
+  top: 150px;
+  left: 20px; /* Mantiene la posición a la izquierda */
+  width: fit-content;
+  z-index: 100;
+  margin-top: 100px; /* Por ejemplo, si tu header mide menos de 50px */
+}
+
+.sticky-button {
+  position: sticky;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.sticky-button:hover {
+  background-color: #0056b3;
+}
+
+.menu-checkbox {
+  display: none;
+}
+
+/* --- SIDEBAR_NAV (MENU LATERAL, sigue fixed) --- */
+.sidebar_nav {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease-in-out;
+  z-index: 1001;
+  box-sizing: border-box;
+}
+
+.sidebar_nav h2 {
+  margin-top: 0;
+  color: #007bff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar_nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar_nav ul li {
+  margin-top: 10px;
+}
+
+.sidebar_nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+  transition: background-color 0.2s ease;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar_nav ul li a:hover {
+  background-color: #444;
+  border-radius: 3px;
+}
+
+.close-sibebar-menu {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.close-sibebar-menu:hover {
+  color: #ccc;
+}
+
+.menu-checkbox:checked ~ .sidebar_nav {
+  left: 0;
+}
+
+/* --- Contenido Principal (main) --- */
+.content {
+  margin-top: 50px; /* Esto empuja el contenido principal hacia abajo */
+}
+
+.secciones {
+  font-size: 36px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.capt1,
+.capt2,
+.capt3,
+.capt4,
+.capt5,
+.capt6,
+.capt7,
+.capt8 {
+  padding-top: 20px;
+  min-height: 70rem; /* Asegura que cada sección tenga altura para el scroll */
+  border: 1px dashed #ccc;
+  margin-bottom: 20px;
+}
+
+.capt1 {
+  /* #447; */
+  background-image: radial-gradient(
+      circle at 99% 0%,
+      rgba(235, 235, 235, 0.03) 0%,
+      rgba(235, 235, 235, 0.03) 50%,
+      rgba(142, 142, 142, 0.03) 50%,
+      rgba(142, 142, 142, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 84% 89%,
+      rgba(229, 229, 229, 0.03) 0%,
+      rgba(229, 229, 229, 0.03) 50%,
+      rgba(1, 1, 1, 0.03) 50%,
+      rgba(1, 1, 1, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 89% 20%,
+      rgba(219, 219, 219, 0.03) 0%,
+      rgba(219, 219, 219, 0.03) 50%,
+      rgba(38, 38, 38, 0.03) 50%,
+      rgba(38, 38, 38, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(48, 48, 48, 0.03) 0%,
+      rgba(48, 48, 48, 0.03) 50%,
+      rgba(109, 109, 109, 0.03) 50%,
+      rgba(109, 109, 109, 0.03) 100%
+    ),
+    linear-gradient(45deg, rgb(26, 53, 180), rgb(164, 129, 216));
+  color: #222;
+}
+
+.capt1 img {
+  height: 300px;
+}
+
+.capt2 img {
+  height: 300px;
+  width: 400px;
+}
+
+.capt3 img {
+  height: 300px;
+}
+
+.capt4 img {
+  height: 300px;
+  width: 400px;
+}
+
+.capt5 img {
+  height: 300px;
+  width: 400px;
+}
+
+.capt6 img {
+  height: 300px;
+  width: 400px;
+}
+
+.capt7 img {
+  height: 300px;
+  width: 400px;
+}
+
+.capt8 img {
+  height: 300px;
+  width: 400px;
+}
+
+.capt2 {
+  color: #fff;
+  background-image: radial-gradient(
+      circle at bottom center,
+      rgb(8, 90, 165) 0%,
+      rgb(8, 90, 165) 32%,
+      transparent 32%,
+      transparent 40%,
+      transparent 40%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at center center,
+      rgb(8, 90, 165) 0%,
+      rgb(8, 90, 165) 23%,
+      transparent 23%,
+      transparent 36%,
+      transparent 36%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, rgb(7, 76, 138), rgb(7, 76, 138));
+  background-size: 35px 35px;
+}
+
+.capt3 {
+  color: #fff;
+  background-image: radial-gradient(
+      circle at 68% 88%,
+      hsla(193, 0%, 4%, 0.06) 0%,
+      hsla(193, 0%, 4%, 0.06) 68%,
+      transparent 68%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 64% 21%,
+      hsla(193, 0%, 4%, 0.06) 0%,
+      hsla(193, 0%, 4%, 0.06) 45%,
+      transparent 45%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 18% 4%,
+      hsla(193, 0%, 4%, 0.06) 0%,
+      hsla(193, 0%, 4%, 0.06) 26%,
+      transparent 26%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 17% 69%,
+      hsla(193, 0%, 4%, 0.06) 0%,
+      hsla(193, 0%, 4%, 0.06) 15%,
+      transparent 15%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 84% 26%,
+      hsla(193, 0%, 4%, 0.06) 0%,
+      hsla(193, 0%, 4%, 0.06) 45%,
+      transparent 45%,
+      transparent 100%
+    ),
+    linear-gradient(45deg, rgb(181, 73, 30), rgb(187, 114, 141));
+}
+
+.capt4 {
+  background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 10%,
+      #ea858a 10%,
+      #ea858a calc(10% + 3px),
+      transparent calc(10% + 3px),
+      transparent 100%
+    ),
+    linear-gradient(180deg, white 10%, transparent 10%),
+    repeating-linear-gradient(
+      180deg,
+      #91c1e1 0px,
+      #91c1e1 2px,
+      transparent 2px,
+      transparent 38px
+    ),
+    linear-gradient(white, white);
+}
+
+.capt5 {
+  color: #f0f0f0;
+  background-image: radial-gradient(
+      circle at center center,
+      rgb(238, 229, 67) 0%,
+      rgb(238, 229, 67) 19%,
+      rgb(204, 180, 18) 19%,
+      rgb(204, 180, 18) 26%,
+      transparent 26%,
+      transparent 100%
+    ),
+    linear-gradient(
+      90deg,
+      hsl(254, 15%, 17%) 0%,
+      hsl(254, 15%, 17%) 33.333%,
+      hsl(254, 15%, 17%) 33.333%,
+      hsl(254, 15%, 17%) 66.666%,
+      hsl(254, 15%, 17%) 66.666%,
+      hsl(254, 15%, 17%) 99.999%
+    );
+  background-size: 74px 74px;
+}
+
+.capt6 {
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.06),
+      transparent,
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.06),
+      rgba(0, 0, 0, 0.04),
+      transparent,
+      rgba(0, 0, 0, 0.07),
+      rgba(0, 0, 0, 0.06),
+      rgba(0, 0, 0, 0.1) 3px
+    ),
+    linear-gradient(90deg, rgb(73, 163, 71), rgb(116, 198, 33));
+}
+
+.capt7 {
+  background-image: repeating-linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.03),
+      rgba(0, 0, 0, 0.06),
+      rgba(0, 0, 0, 0.07),
+      transparent,
+      rgba(0, 0, 0, 0.04),
+      rgba(0, 0, 0, 0.03),
+      rgba(0, 0, 0, 0.04),
+      rgba(0, 0, 0, 0.09),
+      rgba(0, 0, 0, 0.03),
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.02),
+      rgba(0, 0, 0, 0.09),
+      rgba(0, 0, 0, 0.02),
+      rgba(0, 0, 0, 0.05) 3px
+    ),
+    linear-gradient(135deg, rgb(145, 68, 218), rgb(29, 55, 154));
+  color: #f0f0f0;
+}
+
+.capt8 {
+  background-image: repeating-linear-gradient(
+      135deg,
+      rgba(68, 68, 68, 0.07) 0px,
+      rgba(68, 68, 68, 0.07) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(68, 68, 68, 0.07) 0px,
+      rgba(68, 68, 68, 0.07) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(135deg, rgb(251, 168, 16), rgb(251, 222, 55));
+  color: #222;
+}
