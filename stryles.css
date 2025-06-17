@@ -256,66 +256,82 @@ h1 {
   color: #222;
 }
 
+p{
+  text-align: center;
+  font-size: 20px;
+}
+
 .capt1 img {
-  height: 300px;
+  height: 600px;
+  width: 800px;
 }
 
 .capt2 img {
-  height: 300px;
-  width: 400px;
+  height: 700px;
+  width: 900px;
 }
 
 .capt3 img {
-  height: 300px;
+  height: 700px;
+  width: 900px;
 }
 
 .capt4 img {
-  height: 300px;
-  width: 400px;
+  height: 700px;
+  width: 900px;
 }
 
 .capt5 img {
-  height: 300px;
-  width: 400px;
+  height: 700px;
+  width: 900px;
 }
 
 .capt6 img {
-  height: 300px;
-  width: 400px;
+  height: 700px;
+  width: 900px;
 }
 
 .capt7 img {
-  height: 300px;
-  width: 400px;
+  height: 700px;
+  width: 900px;
 }
 
 .capt8 img {
-  height: 300px;
-  width: 400px;
+  height: 700px;
+  width: 900px;
 }
 
 .capt2 {
   color: #fff;
   background-image: radial-gradient(
-      circle at bottom center,
-      rgb(8, 90, 165) 0%,
-      rgb(8, 90, 165) 32%,
-      transparent 32%,
-      transparent 40%,
-      transparent 40%,
-      transparent 100%
+      circle at 99% 0%,
+      rgba(235, 235, 235, 0.03) 0%,
+      rgba(235, 235, 235, 0.03) 50%,
+      rgba(142, 142, 142, 0.03) 50%,
+      rgba(142, 142, 142, 0.03) 100%
     ),
     radial-gradient(
-      circle at center center,
-      rgb(8, 90, 165) 0%,
-      rgb(8, 90, 165) 23%,
-      transparent 23%,
-      transparent 36%,
-      transparent 36%,
-      transparent 100%
+      circle at 84% 89%,
+      rgba(229, 229, 229, 0.03) 0%,
+      rgba(229, 229, 229, 0.03) 50%,
+      rgba(1, 1, 1, 0.03) 50%,
+      rgba(1, 1, 1, 0.03) 100%
     ),
-    linear-gradient(90deg, rgb(7, 76, 138), rgb(7, 76, 138));
-  background-size: 35px 35px;
+    radial-gradient(
+      circle at 89% 20%,
+      rgba(219, 219, 219, 0.03) 0%,
+      rgba(219, 219, 219, 0.03) 50%,
+      rgba(38, 38, 38, 0.03) 50%,
+      rgba(38, 38, 38, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(48, 48, 48, 0.03) 0%,
+      rgba(48, 48, 48, 0.03) 50%,
+      rgba(109, 109, 109, 0.03) 50%,
+      rgba(109, 109, 109, 0.03) 100%
+    ),
+    linear-gradient(45deg, rgb(26, 53, 180), rgb(164, 129, 216));
 }
 
 .capt3 {
